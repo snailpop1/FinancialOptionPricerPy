@@ -41,21 +41,20 @@ $$
 with $Z \sim \mathcal{N}(0,1)$ and step size $\Delta t$.
 
 ### Monte Carlo Simulation for Option Pricing
-1. **Simulate Paths** – Generate many (`num_simulations`) price paths from $t=0$ to expiration $T$ using small steps  
-$$
-\Delta t = \frac{T}{\text{num\_steps}}.
-$$
-2. **Terminal Prices** – Record the price $S_T$ at expiration for every path.
+
+1. **Simulate Paths** – Generate many (`num_simulations`) price paths from *t = 0* to expiration *T* using small steps  
+   Δt = T / num_steps
+
+2. **Terminal Prices** – Record the price *S<sub>T</sub>* at expiration for every path.
+
 3. **Payoffs** – For each path, compute  
-   $$
-   \text{Payoff} = \max(S_T - K, 0),
-   $$
-   where \(K\) is the strike price.  
-4. **Average Payoff** – Average the payoffs across all paths.  
-5. **Discount** – Present-value the average payoff at rate \(r\):  
-   $$
-   \text{Price} = e^{-rT}\,\times\,\text{Average Payoff}.
-   $$
+   Payoff = max(S<sub>T</sub> − K, 0), where K is the strike price.
+
+4. **Average Payoff** – Average the payoffs across all paths.
+
+5. **Discount** – Present-value the average payoff at rate *r*:  
+   Price = exp(−rT) × Average Payoff
+
 
 ### Black–Scholes Formula
 The analytical call price is
